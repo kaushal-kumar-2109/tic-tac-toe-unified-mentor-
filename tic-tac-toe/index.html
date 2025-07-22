@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "./assets/logo.png" rel="icon">
+    <title>Tic-Tac-Toe</title>
+    <link rel="styelesheet" href="./gamepage/style/style.css">
+</head>
+
+<!-- styling for the login page where users or players can put there original name or can be contunue without that -->
+<!-- -----------------------------------  form styling start -----------------------------------  -->
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+  
+  form {
+    border: 5px solid #f1f1f1;
+    width: 70%;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    background-color: #8ebf42;
+    color: white;
+    padding: 14px 0;
+    margin: 10px 0;
+    border: none;
+    cursor: grabbing;
+    width: 100%;
+}
+h1 {
+    text-align:center;
+    font-size: 18px;
+}
+button:hover {
+    opacity: 0.8;
+}
+.formcontainer {
+    text-align: left;
+    margin: 24px 50px 12px;
+}
+.container {
+    padding: 16px 0;
+    text-align:left;
+}
+span.psw {
+    float: right;
+    padding-top: 0;
+    padding-right: 15px;
+}
+  </style>
+<!-- -----------------------------------   form styling End !  -----------------------------------  -->
+
+<!-- -----------------------------------   styling for make it responsive -----------------------------------   -->
+  <style>
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+    }
+</style>
+<!-- -----------------------------------  responsive styling End ! -----------------------------------   -->
+<body>
+    <style>
+        .result{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            z-index: 1;
+        }
+    </style>
+<!-- ----------------------------------- conformation area to start and name selection for the game ----------------------------------- -->
+    <div class="result">
+        <form id="playerForm">
+            <h1>Players name</h1>
+            <div class="formcontainer">
+            <hr/>
+            <div class="container">
+              <label for="uname"><strong><i class="fa-solid fa-x fa-beat" style="color: #015cf9;"></i> Player 1</strong></label>
+              <input type="text" name="player1" placeholder="Enter Player 1 Name" style="color: black;">
+              <label for="uname"><strong><i class="fa-solid fa-o fa-beat" style="color: #f07828;"></i> player 2</strong></label>
+              <input type="text" name="player2" placeholder="Enter Player 2 Name" style="color: black;">
+            </div>
+            <button type="submit">Start Game</button>
+            </div>
+        </form>
+    </div>
+<!--  ----------------------------------- Game Start End !  -----------------------------------  -->
+
+</body>
+<script>
+
+/* -----------------------------------  sending the players data to the game board -----------------------------------  */
+  document.getElementById('playerForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent form from reloading the page
+
+    const player1 = encodeURIComponent(this.player1.value.trim());
+    const player2 = encodeURIComponent(this.player2.value.trim());
+
+    // Redirect to the game page with player names in the URL
+    window.location.href = `./gamepage/game.html?player1=${player1}&player2=${player2}`;
+  });
+/*  -----------------------------------   The script End !  -----------------------------------  */
+  
+</script>
+</html>

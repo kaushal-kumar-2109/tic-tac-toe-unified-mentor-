@@ -1,0 +1,57 @@
+
+/* ----------------------------------- media query ----------------------------------- */
+@media (width<540px) {
+    
+/* ----------------------------------- player profile styling  ----------------------------------- */
+    .players{
+        height: 40vh;
+        margin: 1rem 0rem 0rem 0rem;
+        display: flex;
+        padding: 0.5rem 0rem;
+        justify-content: space-between;
+    }
+/* ----------------------------------- players profile styling end ! ----------------------------------- */
+
+
+/* ----------------------------------- game board styling ----------------------------------- */
+/* setting the container resposiveness */
+    .container{
+        justify-self: center;
+        margin-left: 6rem;
+        height: 81vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+/* game borad */
+    .game{
+        height:81vmin;
+        width: 81vmin;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5vmin;
+    }
+/* game cells  */
+    .box{
+        height: 25vmin;
+        width: 25vmin;
+        border-radius: 1rem;
+        border: none;
+        box-shadow: 0 0 1rem rgba(255, 255, 255, 0.373);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+    }
+/* hover effect of cells */
+    .box:hover{
+        height: 26vmin;
+        width: 26vmin;
+        border: 2px solid rgba(2, 186, 247, 0.68);
+    }
+/* ----------------------------------- game board styling End ! ----------------------------------- */
+}
+/* ----------------------------------- media query End ! ----------------------------------- */
